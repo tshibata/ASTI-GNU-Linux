@@ -1,0 +1,23 @@
+#!/bin/sh
+#!/bin/sh -x
+
+# currently not used
+exit 1
+
+# --utc
+# --localtime
+
+case "${1}" in
+   start)
+      hwclock --hctosys
+      ;;
+
+   stop)
+      hwclock --systohc
+      ;;
+
+   *)
+      echo "Usage: ${0} {start|stop}"
+      exit 1
+      ;;
+esac

@@ -1,0 +1,22 @@
+#!/bin/sh -x
+
+case "${1}" in
+   start)
+      /usr/sbin/dhcpcd # eth0 or wlan0 or whatever!
+      ;;
+
+   stop)
+      /usr/sbin/dhcpcd -k
+      ;;
+
+   restart)
+      ${0} stop
+      sleep 1
+      ${0} start
+      ;;
+
+   *)
+      echo "Usage: ${0} {start|stop|restart}"
+      exit 1
+      ;;
+esac

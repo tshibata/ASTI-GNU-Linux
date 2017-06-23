@@ -1,0 +1,27 @@
+#!/bin/sh
+#!/bin/sh -x
+
+case "${1}" in
+   start)
+      swapon -a
+      ;;
+
+   stop)
+      swapoff -a
+      ;;
+
+   restart)
+      ${0} stop
+      sleep 1
+      ${0} start
+      ;;
+
+   status)
+      swapon -s
+      ;;
+
+   *)
+      echo "Usage: ${0} {start|stop|restart|status}"
+      exit 1
+      ;;
+esac

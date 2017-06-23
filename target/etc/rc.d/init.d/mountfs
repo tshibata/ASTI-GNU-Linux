@@ -1,0 +1,25 @@
+#!/bin/sh
+#!/bin/sh -x
+
+case "${1}" in
+   start)
+      mount -o remount,rw /
+
+      #rm -f /fastboot /forcefsck
+
+      mkdir -p /dev/pts
+
+      mount -a -O no_netdev
+      ;;
+
+   stop)
+      umount -a -d -r -t notmpfs,nosysfs,nodevtmpfs,noproc,nodevpts
+
+      mount -o remount,ro /
+      ;;
+
+   *)
+      echo "Usage: ${0} {start|stop}"
+      exit 1
+      ;;
+esac

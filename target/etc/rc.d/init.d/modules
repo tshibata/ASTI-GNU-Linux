@@ -1,0 +1,21 @@
+#!/bin/sh
+#!/bin/sh -x
+
+case "${1}" in
+   start)
+      ERR=0
+      test -e /etc/sysconfig/modules || exit 0
+
+      cat /etc/sysconfig/modules | sed -e s/#.*// | grep -v ^$ |
+      while read module args
+      do
+         modprobe ${module} ${args} || ERR=1
+      done
+      exit $ERR
+      ;;
+
+   *)
+      echo "Usage: ${0} {start}"
+      exit 1
+      ;;
+esac

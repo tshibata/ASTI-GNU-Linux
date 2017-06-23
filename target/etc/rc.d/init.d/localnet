@@ -1,0 +1,30 @@
+#!/bin/sh
+#!/bin/sh -x
+
+case "${1}" in
+   start)
+      ip addr add 127.0.0.1/8 label lo dev lo # not yet
+      ip link set lo up # not yet
+      hostname `cat /etc/hostname`
+      ;;
+
+   stop)
+      ip link set lo down # not yet
+      echo not yet working
+      ;;
+
+   restart)
+      ${0} stop
+      sleep 1
+      ${0} start
+      ;;
+
+   status)
+      ip link show lo
+      ;;
+
+   *)
+      echo "Usage: ${0} {start|stop|restart|status}"
+      exit 1
+      ;;
+esac

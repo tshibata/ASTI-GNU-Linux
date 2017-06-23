@@ -1,0 +1,35 @@
+#!/bin/sh
+#!/bin/sh -x
+
+# So... fstab is not used?
+
+case "${1}" in
+   start)
+      mount -n -o remount,ro / || /etc/rc.d/init.d/halt stop
+      fsck -a -A -C -T
+      ERR=$?
+      if [ $(($ERR & 32)) != 0 ]
+      then
+         echo "Fsck canceled by user request"
+         ERR=$((ERR - 32))
+      fi
+      if [ $(($ERR & 1)) != 0 ]
+      then
+         echo "File system errors corrected"
+         ERR=$((ERR - 1))
+      fi
+      if [ $(($ERR & 2)) != 0 ]
+      then
+         echo "System should be rebooted"
+         ERR=$((ERR - 2))
+         reboot -f
+      fi
+      
+      exit $ERR
+      ;;
+
+   *)
+      echo "Usage: ${0} {start}"
+      exit 1
+      ;;
+esac

@@ -1,0 +1,55 @@
+#!/bin/bash
+
+set -e
+
+test $(id -u) = 0 || { echo "You must be root user."; exit 1; }
+
+export PATH=$HOME/host/bin:$HOME/host/sbin:$PATH
+
+MNT=`mktemp -d`
+
+mount -v /dev/sdb2 $MNT
+rm -rf $MNT/*
+mkdir $MNT/boot
+mount -v /dev/sdb1 $MNT/boot
+rm -rf $MNT/boot/*
+#chown root: $MNT/boot/
+
+cp -r --preserve=mode,timestamps $HOME/target/* $MNT
+
+
+pushd $HOME/src
+wget --no-clobber http://ftp.gnu.org/gnu//ncurses/ncurses-6.0.tar.gz
+wget --no-clobber http://ftp.gnu.org/gnu/readline/readline-7.0.tar.gz
+wget --no-clobber http://ftp.gnu.org/gnu/inetutils/inetutils-1.9.4.tar.xz
+wget --no-clobber http://roy.marples.name/downloads/dhcpcd/dhcpcd-6.11.5.tar.xz
+wget --no-clobber http://www.infodrom.org/projects/sysklogd/download/sysklogd-1.5.1.tar.gz
+popd
+
+pushd $MNT/root
+tar xf $HOME/src/ncurses-6.0.tar.gz
+tar xf $HOME/src/readline-7.0.tar.gz
+tar xf $HOME/src/bash-4.4.tar.gz
+
+tar xf $HOME/src/binutils-2.28.tar.bz2
+tar xf $HOME/src/mpc-1.0.3.tar.gz
+tar xf $HOME/src/gmp-6.1.2.tar.xz
+tar xf $HOME/src/mpfr-3.1.5.tar.xz
+tar xf $HOME/src/gcc-6.3.0.tar.bz2
+ln -s ../mpc-1.0.3 gcc-6.3.0/mpc
+ln -s ../gmp-6.1.2 gcc-6.3.0/gmp
+ln -s ../mpfr-3.1.5 gcc-6.3.0/mpfr
+
+tar xf $HOME/src/inetutils-1.9.4.tar.xz
+tar xf $HOME/src/dhcpcd-6.11.5.tar.xz
+tar xf $HOME/src/sysklogd-1.5.1.tar.gz
+popd
+
+grub-install --target=i386-pc --boot-directory=$MNT/boot /dev/sdb
+
+umount /dev/sdb1
+umount /dev/sdb2
+
+rmdir $MNT
+
+echo ok

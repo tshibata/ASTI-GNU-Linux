@@ -1,0 +1,20 @@
+#!/bin/sh
+#!/bin/sh -x
+
+case "${1}" in
+   start)
+      mountpoint /dev || mount -o mode=0755,nosuid /dev
+      mountpoint /proc || mount -o nosuid,noexec,nodev /proc
+      mountpoint /run || mount /run
+      mountpoint /sys || mount -o nosuid,noexec,nodev /sys
+
+      mkdir -p /run/lock /run/shm
+      chmod 1777 /run/lock /run/shm
+      ln -sfn /run/shm /dev/shm
+      ;;
+
+   *)
+      echo "Usage: ${0} {start}"
+      exit 1
+      ;;
+esac

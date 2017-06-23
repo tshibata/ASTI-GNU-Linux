@@ -1,0 +1,23 @@
+#!/bin/sh -x
+
+case "${1}" in
+   start)
+      # Just for symmetricity.
+      # The rc script does not stop anything not started.
+      ;;
+
+   stop)
+      killall5 -15 || test $? == 2 || exit 1
+
+      sleep 3 # FIXME
+
+      killall5 -9 || test $? == 2 || exit 1
+
+      sleep 3 # FIXME
+      ;;
+
+   *)
+      echo "Usage: ${0} {stop}"
+      exit 1
+      ;;
+esac
