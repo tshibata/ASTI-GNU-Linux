@@ -2,10 +2,11 @@
 
 cd dhcpcd-6.11.5
 
-./configure --prefix=/usr \
-			--dbdir=/var/lib/dhcpcd
+# ../configure in build directory fails.
 
-#            --libexecdir=/lib/dhcpcd \
+./configure --prefix=/usr \
+            --sysconfdir=/etc \
+            --dbdir=/var/lib/dhcpcd
 
 make
 
