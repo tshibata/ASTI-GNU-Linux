@@ -24,6 +24,7 @@ wget --no-clobber http://ftp.gnu.org/gnu/readline/readline-7.0.tar.gz
 wget --no-clobber http://ftp.gnu.org/gnu/inetutils/inetutils-1.9.4.tar.xz
 wget --no-clobber http://roy.marples.name/downloads/dhcpcd/dhcpcd-6.11.5.tar.xz
 wget --no-clobber http://www.infodrom.org/projects/sysklogd/download/sysklogd-1.5.1.tar.gz
+wget --no-clobber https://github.com/shadow-maint/shadow/releases/download/4.5/shadow-4.5.tar.xz
 popd
 
 pushd $MNT/root
@@ -43,6 +44,7 @@ ln -s ../mpfr-3.1.5 gcc-6.3.0/mpfr
 tar xf $HOME/src/inetutils-1.9.4.tar.xz
 tar xf $HOME/src/dhcpcd-6.11.5.tar.xz
 tar xf $HOME/src/sysklogd-1.5.1.tar.gz
+tar xf $HOME/src/shadow-4.5.tar.xz
 popd
 
 grub-install --target=i386-pc --boot-directory=$MNT/boot /dev/sdb
