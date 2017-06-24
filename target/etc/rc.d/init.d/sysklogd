@@ -1,10 +1,9 @@
-#!/bin/sh
 #!/bin/sh -x
 
 case "${1}" in
    start)
-      /sbin/syslogd &&
-      /sbin/klogd
+      /usr/sbin/syslogd &&
+      /usr/sbin/klogd
       ;;
 
    stop)

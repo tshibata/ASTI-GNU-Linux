@@ -9,6 +9,4 @@ sed -i 's/union wait/int/' syslogd.c
 
 make
 
-make BINDIR=/sbin install_exec
-
-# /usr/sbin
+make BINDIR=/usr/sbin install_exec
