@@ -15,6 +15,6 @@ tar xf sysvinit-2.88dsf.tar.bz2
 cd sysvinit-2.88dsf/
 
 DISTRO=unknown \
-CC=i686-pc-linux-gnu-gcc \
+CC=i686-cross-linux-gnu-gcc \
 ROOT=$HOME/target \
 make all install

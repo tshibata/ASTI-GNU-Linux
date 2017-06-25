@@ -18,7 +18,7 @@ mkdir build
 
 cd build
 
-../configure --host=i686-pc-linux-gnu \
+../configure --host=i686-cross-linux-gnu \
              --prefix=$HOME/target \
              --datarootdir=$HOME/target/usr/share
 

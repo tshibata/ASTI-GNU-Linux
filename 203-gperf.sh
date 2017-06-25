@@ -13,7 +13,7 @@ cd gperf-3.1/
 mkdir build
 cd build/
 
-../configure --host=i686-pc-linux-gnu \
+../configure --host=i686-cross-linux-gnu \
              --prefix=$HOME/target/usr \
              --disable-shared
 

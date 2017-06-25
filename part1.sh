@@ -17,5 +17,4 @@ set -e
 export PATH=$HOME/host/bin:$HOME/host/sbin:$PATH
 
 # Pseudo /sbin/init
-#x86_64-pc-linux-gnu-gcc -o $HOME/target/sbin/init $HOME/src/hello.c
-i686-pc-linux-gnu-gcc -o $HOME/target/sbin/init hello.c
+i686-cross-linux-gnu-gcc -o $HOME/target/sbin/init hello.c

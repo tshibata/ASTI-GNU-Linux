@@ -19,7 +19,7 @@ mkdir build
 cd build/
 
 ../configure PKG_CONFIG='' \
-             --host=i686-pc-linux-gnu \
+             --host=i686-cross-linux-gnu \
              --disable-makeinstall-chown \
              --prefix=$HOME/target \
              --include=$HOME/target/usr/include \

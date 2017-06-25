@@ -32,7 +32,8 @@ mkdir build
 
 cd build/
 
-../configure --target=i686-pc-linux-gnu \
+../configure --target=i686-cross-linux-gnu \
+             --program-prefix=i686-cross-linux-gnu- \
              --prefix=$HOME/host \
              --with-sysroot=$HOME/target \
              --with-local-prefix=/usr \
@@ -53,9 +54,9 @@ make all-gcc
 make install-gcc
 
 # Unless --disable-shared
-# /home/tshibata/host/bin/i686-pc-linux-gnu-ld: cannot find crti.o: No such file or directory
-# /home/tshibata/host/bin/i686-pc-linux-gnu-ld: cannot find -lc
-# /home/tshibata/host/bin/i686-pc-linux-gnu-ld: cannot find crtn.o: No such file or directory
+# /home/tshibata/host/bin/i686-cross-linux-gnu-ld: cannot find crti.o: No such file or directory
+# /home/tshibata/host/bin/i686-cross-linux-gnu-ld: cannot find -lc
+# /home/tshibata/host/bin/i686-cross-linux-gnu-ld: cannot find crtn.o: No such file or directory
 # collect2: error: ld returned 1 exit status
 
 # Unless --disable-threads,

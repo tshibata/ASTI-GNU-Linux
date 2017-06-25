@@ -17,8 +17,9 @@ cd build/
 
 mkdir -p $HOME/target/usr/include/gnu
 touch $HOME/target/usr/include/gnu/stubs.h
+touch $HOME/target/usr/include/gnu/stubs-32.h
 
-../configure --host=i686-pc-linux-gnu \
+../configure --host=i686-cross-linux-gnu \
              --prefix=/usr \
              --with-headers=$HOME/target/usr/include
 

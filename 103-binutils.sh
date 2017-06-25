@@ -18,7 +18,8 @@ mkdir build
 
 cd build/
 
-../configure --target=i686-pc-linux-gnu \
+../configure --target=i686-cross-linux-gnu \
+             --program-prefix=i686-cross-linux-gnu- \
              --prefix=$HOME/host \
              --with-sysroot=$HOME/target
 

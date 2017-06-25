@@ -14,7 +14,7 @@ mkdir build
 
 cd build/
 
-../configure --host=i686-pc-linux-gnu \
+../configure --host=i686-cross-linux-gnu \
              --prefix=$HOME/target/usr \
              --disable-shared \
              --disable-threads \
@@ -30,7 +30,7 @@ make all-gcc
 
 make install-gcc
 
-cp -r $HOME/host/i686-pc-linux-gnu/include/* $HOME/target/usr/include/
-cp -r $HOME/host/i686-pc-linux-gnu/lib/* $HOME/target/usr/lib/
+cp -r $HOME/host/i686-cross-linux-gnu/include/* $HOME/target/usr/include/
+cp -r $HOME/host/i686-cross-linux-gnu/lib/* $HOME/target/usr/lib/
 cp -r $HOME/host/lib/* $HOME/target/usr/lib/
 #FIXME unnecessary files are also copied...

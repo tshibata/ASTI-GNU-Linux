@@ -13,7 +13,7 @@ tar xf grub-2.02~beta3.tar.xz
 cd grub-2.02~beta3/
 
 ./configure --prefix=$HOME/host \
-            --target=i686-pc-linux-gnu \
+            --target=i686-cross-linux-gnu \
             --disable-efiemu \
             --disable-werror
 

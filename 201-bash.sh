@@ -18,7 +18,7 @@ wget --no-clobber --directory-prefix=.. http://ftp.gnu.org/gnu/bash/bash-4.4-pat
 patch -p0 -i ../bash44-$I
 done
 
-./configure --host=i686-pc-linux-gnu \
+./configure --host=i686-cross-linux-gnu \
             --prefix=$HOME/target/ \
             --includedir=$HOME/target/usr/include/ \
             --datarootdir=$HOME/target/usr/share/ \
