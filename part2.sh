@@ -9,6 +9,6 @@ set -e
 ./203-gperf.sh
 ./204-grep.sh
 ./205-sed.sh
-./207-sysvinit.sh
-./208-util-linux.sh
-./209-configuration.sh
+./206-sysvinit.sh
+./207-util-linux.sh
+./208-configuration.sh
