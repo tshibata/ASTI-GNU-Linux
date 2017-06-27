@@ -23,16 +23,6 @@ chmod -v 1777 $MNT/tmp
 chgrp 13 $MNT/run/utmp $MNT/var/log/btmp $MNT/var/log/lastlog $MNT/var/log/wtmp
 chmod -v 664  $MNT/run/utmp $MNT/var/log/btmp $MNT/var/log/lastlog $MNT/var/log/wtmp
 
-
-pushd $HOME/src
-wget --no-clobber http://ftp.gnu.org/gnu//ncurses/ncurses-6.0.tar.gz
-wget --no-clobber http://ftp.gnu.org/gnu/readline/readline-7.0.tar.gz
-wget --no-clobber http://ftp.gnu.org/gnu/inetutils/inetutils-1.9.4.tar.xz
-wget --no-clobber http://roy.marples.name/downloads/dhcpcd/dhcpcd-6.11.5.tar.xz
-wget --no-clobber http://www.infodrom.org/projects/sysklogd/download/sysklogd-1.5.1.tar.gz
-wget --no-clobber https://github.com/shadow-maint/shadow/releases/download/4.5/shadow-4.5.tar.xz
-popd
-
 pushd $MNT/root
 tar xf $HOME/src/ncurses-6.0.tar.gz
 tar xf $HOME/src/readline-7.0.tar.gz
