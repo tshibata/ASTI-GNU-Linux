@@ -13,9 +13,15 @@ rm -rf $MNT/*
 mkdir $MNT/boot
 mount -v /dev/sdb1 $MNT/boot
 rm -rf $MNT/boot/*
-#chown root: $MNT/boot/
 
 cp -r --preserve=mode,timestamps $HOME/target/* $MNT
+
+# Set sticky bit on /tmp
+chmod -v 1777 $MNT/tmp
+
+# Allow utmp(13 on the target) to leave records
+chgrp 13 $MNT/run/utmp $MNT/var/log/btmp $MNT/var/log/lastlog $MNT/var/log/wtmp
+chmod -v 664  $MNT/run/utmp $MNT/var/log/btmp $MNT/var/log/lastlog $MNT/var/log/wtmp
 
 
 pushd $HOME/src
