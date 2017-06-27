@@ -2,11 +2,14 @@
 
 case "${1}" in
    start)
-      /usr/sbin/dhcpcd # eth0 or wlan0 or whatever!
+      hostname `cat /etc/hostname`
+      ifconfig lo up
+      dhcpcd
       ;;
 
    stop)
-      /usr/sbin/dhcpcd -k
+      dhcpcd -k
+      ifconfig lo down
       ;;
 
    restart)
