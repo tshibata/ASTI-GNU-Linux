@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 ./01-ncurses.sh
 ./02-readline.sh
 ./03-bash.sh
