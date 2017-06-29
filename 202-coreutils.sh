@@ -19,9 +19,7 @@ mkdir build
 cd build/
 
 ../configure --host=i686-cross-linux-gnu \
-             --prefix=$HOME/target \
-             --libexecdir=$HOME/target/usr/libexec \
-             --datarootdir=$HOME/target/usr \
+             --prefix=$HOME/target/usr \
              --enable-install-program=hostname
 
 cp ../man/dummy-man  ../man/help2man
@@ -30,5 +28,5 @@ make
 
 make install
 
-# It is expected to have /usr/bin/install while sysklogd installation.
-mv $HOME/target/bin/install $HOME/target/usr/bin/install
+# Move programs used by rcS.d into /bin
+mv $HOME/target/usr/bin/{cat,chgrp,chmod,hostname,ln,mkdir,rm,sleep,[} $HOME/target/bin/
