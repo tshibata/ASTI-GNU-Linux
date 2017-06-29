@@ -23,6 +23,8 @@ chmod -v 1777 $MNT/tmp
 chgrp 13 $MNT/run/utmp $MNT/var/log/btmp $MNT/var/log/lastlog $MNT/var/log/wtmp
 chmod -v 664  $MNT/run/utmp $MNT/var/log/btmp $MNT/var/log/lastlog $MNT/var/log/wtmp
 
+dumpkeys < /dev/tty1 > $MNT/etc/key.map
+
 pushd $MNT/root
 tar xf $HOME/src/ncurses-6.0.tar.gz
 tar xf $HOME/src/readline-7.0.tar.gz
