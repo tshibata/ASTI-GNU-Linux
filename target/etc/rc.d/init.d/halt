@@ -3,7 +3,7 @@
 case "${1}" in
 #   stop)
    start)
-      halt -d -f -i -p
+      /sbin/halt -d -f -i -p
       ;;
 
    *)

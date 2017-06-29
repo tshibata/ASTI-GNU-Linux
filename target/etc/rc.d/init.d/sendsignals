@@ -7,11 +7,11 @@ case "${1}" in
       ;;
 
    stop)
-      killall5 -15 || test $? == 2 || exit 1
+      /sbin/killall5 -15 || test $? == 2 || exit 1
 
       sleep 3 # FIXME
 
-      killall5 -9 || test $? == 2 || exit 1
+      /sbin/killall5 -9 || test $? == 2 || exit 1
 
       sleep 3 # FIXME
       ;;

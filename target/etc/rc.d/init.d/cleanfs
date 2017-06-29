@@ -1,13 +1,12 @@
-#!/bin/sh
 #!/bin/sh -x
 
 case "${1}" in
    start)
-      rm -rf /tmp/*
+      /bin/rm -rf /tmp/*
 
       > /var/run/utmp
-      chmod 664 /var/run/utmp
-      chgrp utmp /var/run/utmp
+      /bin/chmod 664 /var/run/utmp
+      /bin/chgrp utmp /var/run/utmp
       ;;
 
    *)

@@ -1,12 +1,11 @@
-#!/bin/sh
 #!/bin/sh -x
 
 # So... fstab is not used?
 
 case "${1}" in
    start)
-      mount -n -o remount,ro / || /etc/rc.d/init.d/halt stop
-      fsck -a -A -C -T
+      /bin/mount -n -o remount,ro / || /etc/rc.d/init.d/halt stop
+      /sbin/fsck -a -A -C -T
       ERR=$?
       if [ $(($ERR & 32)) != 0 ]
       then
@@ -22,7 +21,7 @@ case "${1}" in
       then
          echo "System should be rebooted"
          ERR=$((ERR - 2))
-         reboot -f
+         /sbin/reboot -f
       fi
       
       exit $ERR

@@ -2,19 +2,19 @@
 
 case "${1}" in
    start)
-      hostname `cat /etc/hostname`
-      ifconfig lo up
-      dhcpcd
+      /bin/hostname `cat /etc/hostname`
+      /usr/bin/ifconfig lo up
+      /usr/sbin/dhcpcd
       ;;
 
    stop)
-      dhcpcd -k
-      ifconfig lo down
+      /usr/sbin/dhcpcd -k
+      /usr/bin/ifconfig lo down
       ;;
 
    restart)
       ${0} stop
-      sleep 1
+      /bin/sleep 1
       ${0} start
       ;;
 

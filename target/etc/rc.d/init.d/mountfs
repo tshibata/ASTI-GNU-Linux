@@ -1,21 +1,18 @@
-#!/bin/sh
 #!/bin/sh -x
 
 case "${1}" in
    start)
-      mount -o remount,rw /
+      /bin/mount -o remount,rw /
 
-      #rm -f /fastboot /forcefsck
+      /bin/mkdir -p /dev/pts
 
-      mkdir -p /dev/pts
-
-      mount -a -O no_netdev
+      /bin/mount -a -O no_netdev
       ;;
 
    stop)
-      umount -a -d -r -t notmpfs,nosysfs,nodevtmpfs,noproc,nodevpts
+      /bin/umount -a -d -r -t notmpfs,nosysfs,nodevtmpfs,noproc,nodevpts
 
-      mount -o remount,ro /
+      /bin/mount -o remount,ro /
       ;;
 
    *)

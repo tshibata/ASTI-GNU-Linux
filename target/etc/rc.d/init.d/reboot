@@ -3,7 +3,7 @@
 case "${1}" in
 #   stop)
    start)
-      reboot -d -f -i
+      /sbin/reboot -d -f -i
       ;;
 
    *)

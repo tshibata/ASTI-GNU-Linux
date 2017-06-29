@@ -9,11 +9,11 @@ exit 1
 
 case "${1}" in
    start)
-      hwclock --hctosys
+      /sbin/hwclock --hctosys
       ;;
 
    stop)
-      hwclock --systohc
+      /sbin/hwclock --systohc
       ;;
 
    *)

@@ -1,15 +1,16 @@
-#!/bin/sh
 #!/bin/sh -x
 
 case "${1}" in
    start)
-      if [ -f "/etc/sysctl.conf" ]; then
-         sysctl -p
+      if [ -f "/etc/sysctl.conf" ]
+      then
+         # Configure kernel parameters
+         /sbin/sysctl -p
       fi
       ;;
 
    status)
-      sysctl -a
+      /sbin/sysctl -a
       ;;
 
    *)
