@@ -16,6 +16,9 @@ rm -rf $MNT/boot/*
 
 cp -r --preserve=mode,timestamps $HOME/target/* $MNT
 
+# Make /root only for root
+chmod -v 700 $MNT/root
+
 # Set sticky bit on /tmp
 chmod -v 1777 $MNT/tmp
 
