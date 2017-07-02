@@ -10,13 +10,15 @@ mkdir build
 
 cd build/
 
-../configure --prefix=/ \
-             --includedir=/usr/include/ \
-             --datarootdir=/usr/share/ \
+../configure --prefix=/usr \
+             --bindir=/bin \
+             --libdir=/lib \
              --enable-widec
-
-#             --enable-overwrite
 
 make
 
 make install
+
+# If prefix is /, it says:
+# ** Include-directory is not in a standard location
+# Even --includedir=/usr/include does not help.
