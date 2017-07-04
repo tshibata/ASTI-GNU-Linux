@@ -15,6 +15,7 @@ set -e
 pushd $HOME/src
 wget --no-clobber http://ftp.gnu.org/gnu//ncurses/ncurses-6.0.tar.gz
 wget --no-clobber http://ftp.gnu.org/gnu/readline/readline-7.0.tar.gz
+wget --no-clobber http://dev.gentoo.org/~blueness/eudev/eudev-3.2.2.tar.gz
 wget --no-clobber http://ftp.gnu.org/gnu/inetutils/inetutils-1.9.4.tar.xz
 wget --no-clobber http://roy.marples.name/downloads/dhcpcd/dhcpcd-6.11.5.tar.xz
 wget --no-clobber http://www.infodrom.org/projects/sysklogd/download/sysklogd-1.5.1.tar.gz

@@ -7,8 +7,9 @@ set -e
 ./03-bash.sh
 ./04-binutils.sh
 ./05-gcc.sh
-./11-sysklogd.sh
-./12-inetutil.sh
-./13-dhcpcd.sh
-./14-shadow.sh
+./11-eudev.sh
+./12-sysklogd.sh
+./13-inetutil.sh
+./14-dhcpcd.sh
+./15-shadow.sh
 ./21-runlevel3.sh

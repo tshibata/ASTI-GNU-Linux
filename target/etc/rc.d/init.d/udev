@@ -1,0 +1,16 @@
+#!/bin/sh -x
+
+case "${1}" in
+   start)
+      /usr/sbin/udevd --daemon
+      /usr/sbin/udevadm trigger --action=add --type=subsystems
+      /usr/sbin/udevadm trigger --action=add --type=devices
+      /usr/sbin/udevadm trigger --action=change --type=devices
+      /usr/sbin/udevadm settle
+      ;;
+
+   *)
+      echo "Usage ${0} {start}"
+      exit 1
+      ;;
+esac

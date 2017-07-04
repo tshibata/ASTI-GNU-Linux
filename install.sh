@@ -42,6 +42,7 @@ ln -s ../mpc-1.0.3 gcc-6.3.0/mpc
 ln -s ../gmp-6.1.2 gcc-6.3.0/gmp
 ln -s ../mpfr-3.1.5 gcc-6.3.0/mpfr
 
+tar xf $HOME/src/eudev-3.2.2.tar.gz
 tar xf $HOME/src/inetutils-1.9.4.tar.xz
 tar xf $HOME/src/dhcpcd-6.11.5.tar.xz
 tar xf $HOME/src/sysklogd-1.5.1.tar.gz
