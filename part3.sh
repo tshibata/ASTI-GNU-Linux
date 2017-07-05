@@ -21,3 +21,6 @@ wget --no-clobber http://roy.marples.name/downloads/dhcpcd/dhcpcd-6.11.5.tar.xz
 wget --no-clobber http://www.infodrom.org/projects/sysklogd/download/sysklogd-1.5.1.tar.gz
 wget --no-clobber https://github.com/shadow-maint/shadow/releases/download/4.5/shadow-4.5.tar.xz
 popd
+
+# Prepare for SSL by the target.
+$HOME/target/etc/ssl/cacert.sh
