@@ -21,7 +21,10 @@ touch $HOME/target/usr/include/gnu/stubs-32.h
 
 ../configure --host=i686-cross-linux-gnu \
              --prefix=/usr \
-             --with-headers=$HOME/target/usr/include
+             --with-headers=$HOME/target/usr/include \
+             --enable-obsolete-rpc
+
+# Unless --enable-obsolete-rpc, it fails in building PAM.
 
 make install_root=$HOME/target/ install-headers
 
