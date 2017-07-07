@@ -48,6 +48,17 @@ tar xf $HOME/src/inetutils-1.9.4.tar.xz
 tar xf $HOME/src/dhcpcd-6.11.5.tar.xz
 tar xf $HOME/src/sysklogd-1.5.1.tar.gz
 tar xf $HOME/src/shadow-4.5.tar.xz
+
+tar xf $HOME/src/pkg-config-0.29.2.tar.gz
+tar xf $HOME/src/bzip2-1.0.6.tar.gz
+tar xf $HOME/src/curl-7.54.1.tar.gz
+tar xf $HOME/src/gzip-1.8.tar.xz
+tar xf $HOME/src/nano-2.8.5.tar.xz
+tar xf $HOME/src/openssl-1.0.2l.tar.gz
+tar xf $HOME/src/perl-5.24.1.tar.gz
+tar xf $HOME/src/wget-1.19.1.tar.xz
+tar xf $HOME/src/xz-5.2.3.tar.xz
+tar xf $HOME/src/zlib-1.2.11.tar.xz
 popd
 
 grub-install --target=i386-pc --boot-directory=$MNT/boot /dev/sdb

@@ -10,7 +10,7 @@ cd build
 
 ../configure --prefix= \
              --include=/usr/include \
-			 --datarootdir=/usr/share
+             --datarootdir=/usr/share
 
 make
 

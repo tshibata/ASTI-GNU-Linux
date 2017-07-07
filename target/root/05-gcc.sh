@@ -11,6 +11,7 @@ mkdir build
 cd build/
 
 ../configure --prefix=/usr \
+             --disable-bootstrap \
              --enable-languages=c,c++
 
 make

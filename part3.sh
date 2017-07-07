@@ -20,6 +20,16 @@ wget --no-clobber http://ftp.gnu.org/gnu/inetutils/inetutils-1.9.4.tar.xz
 wget --no-clobber http://roy.marples.name/downloads/dhcpcd/dhcpcd-6.11.5.tar.xz
 wget --no-clobber http://www.infodrom.org/projects/sysklogd/download/sysklogd-1.5.1.tar.gz
 wget --no-clobber https://github.com/shadow-maint/shadow/releases/download/4.5/shadow-4.5.tar.xz
+wget --no-clobber https://pkg-config.freedesktop.org/releases/pkg-config-0.29.2.tar.gz
+wget --no-clobber http://zlib.net/zlib-1.2.11.tar.xz
+wget --no-clobber http://ftp.gnu.org/gnu/gzip/gzip-1.8.tar.xz
+wget --no-clobber http://www.bzip.org/1.0.6/bzip2-1.0.6.tar.gz
+wget --no-clobber https://tukaani.org/xz/xz-5.2.3.tar.xz
+wget --no-clobber http://www.cpan.org/src/5.0/perl-5.24.1.tar.gz
+wget --no-clobber https://www.openssl.org/source/openssl-1.0.2l.tar.gz
+wget --no-clobber https://curl.haxx.se/download/curl-7.54.1.tar.gz
+wget --no-clobber http://ftp.gnu.org/gnu/wget/wget-1.19.1.tar.xz
+wget --no-clobber https://nano-editor.org/dist/v2.8/nano-2.8.5.tar.xz
 popd
 
 # Prepare for SSL by the target.
