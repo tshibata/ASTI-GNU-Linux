@@ -20,7 +20,8 @@ cd build/
 
 ../configure PKG_CONFIG='' \
              --host=i686-cross-linux-gnu \
-             --prefix=$HOME/target/usr \
+             --prefix=$HOME/target \
+             --datarootdir=$HOME/target/usr/share \
              --disable-vlock
 
 # Unless --disable-vlock, you need PEM

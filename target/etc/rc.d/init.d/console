@@ -2,7 +2,7 @@
 
 case "${1}" in
    start)
-      /usr/bin/loadkeys /etc/key.map
+      /bin/loadkeys /etc/key.map
       ;;              
 
    *)                 
