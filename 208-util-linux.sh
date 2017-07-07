@@ -23,7 +23,7 @@ cd build/
              --disable-makeinstall-chown \
              --prefix=$HOME/target \
              --include=$HOME/target/usr/include \
-             --datarootdir=$HOME/target/usr \
+             --datarootdir=$HOME/target/usr/share \
              --without-python \
              --without-systemd \
              --disable-shared
