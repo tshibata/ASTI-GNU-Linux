@@ -41,6 +41,10 @@ tar xf $HOME/src/gcc-6.3.0.tar.bz2
 ln -s ../mpc-1.0.3 gcc-6.3.0/mpc
 ln -s ../gmp-6.1.2 gcc-6.3.0/gmp
 ln -s ../mpfr-3.1.5 gcc-6.3.0/mpfr
+
+tar xf $HOME/src/perl-5.24.1.tar.gz
+tar xf $HOME/src/autoconf-2.69.tar.xz
+tar xf $HOME/src/automake-1.15.tar.xz
 tar xf $HOME/src/util-linux-2.29.tar.xz
 
 tar xf $HOME/src/eudev-3.2.2.tar.gz
@@ -50,15 +54,21 @@ tar xf $HOME/src/sysklogd-1.5.1.tar.gz
 tar xf $HOME/src/shadow-4.5.tar.xz
 
 tar xf $HOME/src/pkg-config-0.29.2.tar.gz
-tar xf $HOME/src/bzip2-1.0.6.tar.gz
-tar xf $HOME/src/curl-7.54.1.tar.gz
-tar xf $HOME/src/gzip-1.8.tar.xz
-tar xf $HOME/src/nano-2.8.5.tar.xz
-tar xf $HOME/src/openssl-1.0.2l.tar.gz
-tar xf $HOME/src/perl-5.24.1.tar.gz
-tar xf $HOME/src/wget-1.19.1.tar.xz
-tar xf $HOME/src/xz-5.2.3.tar.xz
+tar xf $HOME/src/m4-1.4.18.tar.xz
+tar xf $HOME/src/bison-3.0.4.tar.xz
+tar xf $HOME/src/flex-2.6.3.tar.gz
+tar xf $HOME/src/patch-2.7.5.tar.xz
+tar xf $HOME/src/texinfo-6.3.tar.xz
+tar xf $HOME/src/bc-1.06.95.tar.bz2
+
 tar xf $HOME/src/zlib-1.2.11.tar.xz
+tar xf $HOME/src/gzip-1.8.tar.xz
+tar xf $HOME/src/bzip2-1.0.6.tar.gz
+tar xf $HOME/src/xz-5.2.3.tar.xz
+tar xf $HOME/src/openssl-1.0.2l.tar.gz
+tar xf $HOME/src/wget-1.19.1.tar.xz
+tar xf $HOME/src/curl-7.54.1.tar.gz
+tar xf $HOME/src/nano-2.8.5.tar.xz
 popd
 
 grub-install --target=i386-pc --boot-directory=$MNT/boot /dev/sdb

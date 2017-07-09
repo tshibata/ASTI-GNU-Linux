@@ -2,27 +2,37 @@
 
 set -e
 
-./01-ncurses.sh
-./02-readline.sh
-./03-bash.sh
-./04-binutils.sh
-./05-gcc.sh
-./06-util-linux.sh
+./101-ncurses.sh
+./102-readline.sh
+./103-bash.sh
+./104-binutils.sh
+./105-gcc.sh
+./106-util-linux.sh
 # TBD: Shall we re-compile everything?
-./11-eudev.sh
-./12-sysklogd.sh
-./13-inetutil.sh
-./14-dhcpcd.sh
-./15-shadow.sh
-./21-runlevel3.sh
-./31-pkg-config.sh
-./41-zlib.sh
-./42-gzip.sh
-./43-bzip2.sh
-./44-xz.sh
-./45-perl.sh
-./46-openssl.sh
-./47-curl.sh
-./48-wget.sh
+
+./201-eudev.sh
+./202-sysklogd.sh
+./203-inetutil.sh
+./204-dhcpcd.sh
+./205-shadow.sh
+./206-runlevel.sh
+
+./301-pkg-config.sh
+./302-perl.sh
+./303-m4.sh
+./304-autoconf.sh
+./305-automake.sh
+./306-bison.sh
+./307-flex.sh
+./308-patch.sh
+./309-texinfo.sh
+./310-bc.sh
+./311-zlib.sh
+./312-gzip.sh
+./313-bzip2.sh
+./314-xz.sh
+./315-openssl.sh
+./316-curl.sh
+./317-wget.sh
 # TBD: Do I really need both of curl and wget?
-./49-nano.sh
+./318-nano.sh
