@@ -4,9 +4,9 @@
 
 set -e
 
-export PATH=$HOME/host/bin:$HOME/host/sbin:$PATH
+export PATH=$HOSTDIR/bin:$HOSTDIR/sbin:$PATH
 
-cd $HOME/src/
+cd $SRCDIR
 
 wget --no-clobber http://ftp.gnu.org/gnu/glibc/glibc-2.25.tar.xz
 rm -rf glibc-2.25/
@@ -15,17 +15,17 @@ cd glibc-2.25/
 mkdir build
 cd build/
 
-mkdir -p $HOME/target/usr/include/gnu
-touch $HOME/target/usr/include/gnu/stubs.h
-touch $HOME/target/usr/include/gnu/stubs-32.h
+mkdir -p $TARGETDIR/usr/include/gnu
+touch $TARGETDIR/usr/include/gnu/stubs.h
+touch $TARGETDIR/usr/include/gnu/stubs-32.h
 
 ../configure --host=i686-cross-linux-gnu \
              --prefix=/usr \
-             --with-headers=$HOME/target/usr/include \
+             --with-headers=$TARGETDIR/usr/include \
              --enable-obsolete-rpc
 
 # Unless --enable-obsolete-rpc, it fails in building PAM.
 
-make install_root=$HOME/target/ install-headers
+make install_root=$TARGETDIR install-headers
 
-#cp ../include/gnu/stubs.h $HOME/target/usr/include/gnu/
+#cp ../include/gnu/stubs.h $TARGETDIR/usr/include/gnu/

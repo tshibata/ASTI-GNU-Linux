@@ -2,9 +2,9 @@
 
 set -e
 
-export PATH=$HOME/host/bin:$HOME/host/sbin:$PATH
+export PATH=$HOSTDIR/bin:$HOSTDIR/sbin:$PATH
 
-cd $HOME/src/
+cd $SRCDIR
 
 wget --no-clobber http://www.multiprecision.org/mpc/download/mpc-1.0.3.tar.gz
 rm -rf mpc-1.0.3/
@@ -34,8 +34,8 @@ cd build/
 
 ../configure --target=i686-cross-linux-gnu \
              --program-prefix=i686-cross-linux-gnu- \
-             --prefix=$HOME/host \
-             --with-sysroot=$HOME/target \
+             --prefix=$HOSTDIR \
+             --with-sysroot=$TARGETDIR \
              --with-local-prefix=/usr \
              --with-native-system-header-dir=/usr/include \
              --disable-shared \

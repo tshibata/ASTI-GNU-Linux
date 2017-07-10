@@ -2,10 +2,14 @@
 
 set -e
 
-mkdir -p $HOME/src
-rm -rf $HOME/host/ $HOME/target/
-mkdir $HOME/host
-mkdir $HOME/target
+export SRCDIR=`pwd`/work/src
+export HOSTDIR=`pwd`/work/host
+export TARGETDIR=`pwd`/work/target
+
+mkdir -p $SRCDIR
+mkdir -p $HOSTDIR
+mkdir -p $TARGETDIR
+rm -rf $HOSTDIR $TARGETDIR
 
 ./part1.sh
 

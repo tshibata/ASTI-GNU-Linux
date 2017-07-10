@@ -2,9 +2,13 @@
 
 set -e
 
+export SRCDIR=`pwd`/work/src
+export HOSTDIR=`pwd`/work/host
+export TARGETDIR=`pwd`/work/target
+
 test $(id -u) = 0 || { echo "You must be root user."; exit 1; }
 
-export PATH=$HOME/host/bin:$HOME/host/sbin:$PATH
+export PATH=$HOSTDIR/bin:$HOSTDIR/sbin:$PATH
 
 MNT=`mktemp -d`
 
@@ -14,7 +18,7 @@ mkdir $MNT/boot
 mount -v /dev/sdb1 $MNT/boot
 rm -rf $MNT/boot/*
 
-cp -r --preserve=mode,timestamps $HOME/target/* $MNT
+cp -r --preserve=mode,timestamps $TARGETDIR/* $MNT
 
 # Make /root only for root
 chmod -v 700 $MNT/root
@@ -29,46 +33,46 @@ chmod -v 664  $MNT/run/utmp $MNT/var/log/btmp $MNT/var/log/lastlog $MNT/var/log/
 dumpkeys < /dev/tty1 > $MNT/etc/key.map
 
 pushd $MNT/root
-tar xf $HOME/src/ncurses-6.0.tar.gz
-tar xf $HOME/src/readline-7.0.tar.gz
-tar xf $HOME/src/bash-4.4.tar.gz
+tar xf $SRCDIR/ncurses-6.0.tar.gz
+tar xf $SRCDIR/readline-7.0.tar.gz
+tar xf $SRCDIR/bash-4.4.tar.gz
 
-tar xf $HOME/src/binutils-2.28.tar.bz2
-tar xf $HOME/src/mpc-1.0.3.tar.gz
-tar xf $HOME/src/gmp-6.1.2.tar.xz
-tar xf $HOME/src/mpfr-3.1.5.tar.xz
-tar xf $HOME/src/gcc-6.3.0.tar.bz2
+tar xf $SRCDIR/binutils-2.28.tar.bz2
+tar xf $SRCDIR/mpc-1.0.3.tar.gz
+tar xf $SRCDIR/gmp-6.1.2.tar.xz
+tar xf $SRCDIR/mpfr-3.1.5.tar.xz
+tar xf $SRCDIR/gcc-6.3.0.tar.bz2
 ln -s ../mpc-1.0.3 gcc-6.3.0/mpc
 ln -s ../gmp-6.1.2 gcc-6.3.0/gmp
 ln -s ../mpfr-3.1.5 gcc-6.3.0/mpfr
 
-tar xf $HOME/src/perl-5.24.1.tar.gz
-tar xf $HOME/src/autoconf-2.69.tar.xz
-tar xf $HOME/src/automake-1.15.tar.xz
-tar xf $HOME/src/util-linux-2.29.tar.xz
+tar xf $SRCDIR/perl-5.24.1.tar.gz
+tar xf $SRCDIR/autoconf-2.69.tar.xz
+tar xf $SRCDIR/automake-1.15.tar.xz
+tar xf $SRCDIR/util-linux-2.29.tar.xz
 
-tar xf $HOME/src/eudev-3.2.2.tar.gz
-tar xf $HOME/src/inetutils-1.9.4.tar.xz
-tar xf $HOME/src/dhcpcd-6.11.5.tar.xz
-tar xf $HOME/src/sysklogd-1.5.1.tar.gz
-tar xf $HOME/src/shadow-4.5.tar.xz
+tar xf $SRCDIR/eudev-3.2.2.tar.gz
+tar xf $SRCDIR/inetutils-1.9.4.tar.xz
+tar xf $SRCDIR/dhcpcd-6.11.5.tar.xz
+tar xf $SRCDIR/sysklogd-1.5.1.tar.gz
+tar xf $SRCDIR/shadow-4.5.tar.xz
 
-tar xf $HOME/src/pkg-config-0.29.2.tar.gz
-tar xf $HOME/src/m4-1.4.18.tar.xz
-tar xf $HOME/src/bison-3.0.4.tar.xz
-tar xf $HOME/src/flex-2.6.3.tar.gz
-tar xf $HOME/src/patch-2.7.5.tar.xz
-tar xf $HOME/src/texinfo-6.3.tar.xz
-tar xf $HOME/src/bc-1.06.95.tar.bz2
+tar xf $SRCDIR/pkg-config-0.29.2.tar.gz
+tar xf $SRCDIR/m4-1.4.18.tar.xz
+tar xf $SRCDIR/bison-3.0.4.tar.xz
+tar xf $SRCDIR/flex-2.6.3.tar.gz
+tar xf $SRCDIR/patch-2.7.5.tar.xz
+tar xf $SRCDIR/texinfo-6.3.tar.xz
+tar xf $SRCDIR/bc-1.06.95.tar.bz2
 
-tar xf $HOME/src/zlib-1.2.11.tar.xz
-tar xf $HOME/src/gzip-1.8.tar.xz
-tar xf $HOME/src/bzip2-1.0.6.tar.gz
-tar xf $HOME/src/xz-5.2.3.tar.xz
-tar xf $HOME/src/openssl-1.0.2l.tar.gz
-tar xf $HOME/src/wget-1.19.1.tar.xz
-tar xf $HOME/src/curl-7.54.1.tar.gz
-tar xf $HOME/src/nano-2.8.5.tar.xz
+tar xf $SRCDIR/zlib-1.2.11.tar.xz
+tar xf $SRCDIR/gzip-1.8.tar.xz
+tar xf $SRCDIR/bzip2-1.0.6.tar.gz
+tar xf $SRCDIR/xz-5.2.3.tar.xz
+tar xf $SRCDIR/openssl-1.0.2l.tar.gz
+tar xf $SRCDIR/wget-1.19.1.tar.xz
+tar xf $SRCDIR/curl-7.54.1.tar.gz
+tar xf $SRCDIR/nano-2.8.5.tar.xz
 popd
 
 grub-install --target=i386-pc --boot-directory=$MNT/boot /dev/sdb

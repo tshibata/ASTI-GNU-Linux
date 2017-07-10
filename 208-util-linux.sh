@@ -2,9 +2,9 @@
 
 set -e
 
-export PATH=$HOME/host/bin:$HOME/host/sbin:$PATH
+export PATH=$HOSTDIR/bin:$HOSTDIR/sbin:$PATH
 
-cd $HOME/src/
+cd $SRCDIR
 
 wget --no-clobber https://www.kernel.org/pub/linux/utils/util-linux/v2.29/util-linux-2.29.tar.xz
 
@@ -22,9 +22,9 @@ cd build/
 
 ../configure PKG_CONFIG='' \
              --host=i686-cross-linux-gnu \
-             --prefix=$HOME/target \
-             --include=$HOME/target/usr/include \
-             --datarootdir=$HOME/target/usr/share \
+             --prefix=$TARGETDIR \
+             --include=$TARGETDIR/usr/include \
+             --datarootdir=$TARGETDIR/usr/share \
              --without-python \
              --without-systemd \
              --disable-shared \

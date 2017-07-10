@@ -1,9 +1,9 @@
 #!/bin/bash
 set -e
 
-export PATH=$HOME/host/bin:$HOME/host/sbin:$PATH
+export PATH=$HOSTDIR/bin:$HOSTDIR/sbin:$PATH
 
-cd $HOME/src/
+cd $SRCDIR
 
 cd binutils-2.28/
 
@@ -14,7 +14,7 @@ mkdir build
 cd build/
 
 ../configure --host=i686-cross-linux-gnu \
-             --prefix=$HOME/target/usr \
+             --prefix=$TARGETDIR/usr \
              --disable-shared \
              --disable-nls
 

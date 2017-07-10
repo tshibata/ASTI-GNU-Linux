@@ -2,9 +2,9 @@
 
 set -e
 
-export PATH=$HOME/host/bin:$HOME/host/sbin:$PATH
+export PATH=$HOSTDIR/bin:$HOSTDIR/sbin:$PATH
 
-cd $HOME/src/
+cd $SRCDIR
 
 wget --no-clobber http://ftp.gnu.org/gnu/findutils/findutils-4.6.0.tar.gz
 
@@ -19,7 +19,7 @@ mkdir build
 cd build
 
 ../configure --host=i686-cross-linux-gnu \
-             --prefix=$HOME/target/usr
+             --prefix=$TARGETDIR/usr
 
 make
 

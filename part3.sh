@@ -12,7 +12,7 @@ set -e
 ./306-make.sh
 ./307-tar.sh
 
-pushd $HOME/src
+pushd $SRCDIR
 wget --no-clobber http://ftp.gnu.org/gnu//ncurses/ncurses-6.0.tar.gz
 wget --no-clobber http://ftp.gnu.org/gnu/readline/readline-7.0.tar.gz
 wget --no-clobber http://ftp.gnu.org/gnu/autoconf/autoconf-2.69.tar.xz
@@ -41,4 +41,4 @@ wget --no-clobber https://nano-editor.org/dist/v2.8/nano-2.8.5.tar.xz
 popd
 
 # Prepare for SSL by the target.
-$HOME/target/etc/ssl/cacert.sh
+$TARGETDIR/etc/ssl/cacert.sh

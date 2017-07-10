@@ -2,7 +2,7 @@
 
 set -e
 
-cd $HOME/src/
+cd $SRCDIR
 
 wget --no-clobber http://alpha.gnu.org/gnu/grub/grub-2.02~beta3.tar.xz
 
@@ -12,7 +12,7 @@ tar xf grub-2.02~beta3.tar.xz
 
 cd grub-2.02~beta3/
 
-./configure --prefix=$HOME/host \
+./configure --prefix=$HOSTDIR \
             --target=i686-cross-linux-gnu \
             --disable-efiemu \
             --disable-werror

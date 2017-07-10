@@ -2,9 +2,9 @@
 
 set -e
 
-export PATH=$HOME/host/bin:$HOME/host/sbin:$PATH
+export PATH=$HOSTDIR/bin:$HOSTDIR/sbin:$PATH
 
-cd $HOME/src/
+cd $SRCDIR
 
 cd gcc-6.3.0/
 
@@ -15,7 +15,7 @@ mkdir build
 cd build/
 
 ../configure --host=i686-cross-linux-gnu \
-             --prefix=$HOME/target/usr \
+             --prefix=$TARGETDIR/usr \
              --disable-shared \
              --disable-threads \
              --disable-libatomic \
@@ -30,7 +30,7 @@ make all-gcc
 
 make install-gcc
 
-cp -r $HOME/host/i686-cross-linux-gnu/include/* $HOME/target/usr/include/
-cp -r $HOME/host/i686-cross-linux-gnu/lib/* $HOME/target/usr/lib/
-cp -r $HOME/host/lib/* $HOME/target/usr/lib/
+cp -r $HOSTDIR/i686-cross-linux-gnu/include/* $TARGETDIR/usr/include/
+cp -r $HOSTDIR/i686-cross-linux-gnu/lib/* $TARGETDIR/usr/lib/
+cp -r $HOSTDIR/lib/* $TARGETDIR/usr/lib/
 #FIXME unnecessary files are also copied...

@@ -2,16 +2,16 @@
 
 set -e
 
-export PATH=$HOME/host/bin:$HOME/host/sbin:$PATH
+export PATH=$HOSTDIR/bin:$HOSTDIR/sbin:$PATH
 
-cd $HOME/src/
+cd $SRCDIR
 
 cd linux-4.9.9/
 
 make
 
-make INSTALL_MOD_PATH=$HOME/target modules_install
+make INSTALL_MOD_PATH=$TARGETDIR modules_install
 
-mkdir -p $HOME/target/boot
+mkdir -p $TARGETDIR/boot
 
-cp arch/x86/boot/bzImage $HOME/target/boot/
+cp arch/x86/boot/bzImage $TARGETDIR/boot/

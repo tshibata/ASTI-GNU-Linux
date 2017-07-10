@@ -2,9 +2,9 @@
 
 set -e
 
-export PATH=$HOME/host/bin:$HOME/host/sbin:$PATH
+export PATH=$HOSTDIR/bin:$HOSTDIR/sbin:$PATH
 
-cd $HOME/src/
+cd $SRCDIR
 
 wget --no-clobber https://www.kernel.org/pub/linux/utils/kbd/kbd-2.0.4.tar.xz
 
@@ -20,8 +20,8 @@ cd build/
 
 ../configure PKG_CONFIG='' \
              --host=i686-cross-linux-gnu \
-             --prefix=$HOME/target \
-             --datarootdir=$HOME/target/usr/share \
+             --prefix=$TARGETDIR \
+             --datarootdir=$TARGETDIR/usr/share \
              --disable-vlock
 
 # Unless --disable-vlock, you need PEM

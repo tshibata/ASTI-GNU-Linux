@@ -2,9 +2,9 @@
 
 set -e
 
-export PATH=$HOME/host/bin:$HOME/host/sbin:$PATH
+export PATH=$HOSTDIR/bin:$HOSTDIR/sbin:$PATH
 
-cd $HOME/src/
+cd $SRCDIR
 
 wget --no-clobber http://ftp.gnu.org/gnu/grep/grep-3.0.tar.xz
 
@@ -19,8 +19,8 @@ mkdir build
 cd build
 
 ../configure --host=i686-cross-linux-gnu \
-             --prefix=$HOME/target \
-             --datarootdir=$HOME/target/usr/share
+             --prefix=$TARGETDIR \
+             --datarootdir=$TARGETDIR/usr/share
 
 make
 

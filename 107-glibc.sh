@@ -4,9 +4,9 @@
 
 set -e
 
-export PATH=$HOME/host/bin:$HOME/host/sbin:$PATH
+export PATH=$HOSTDIR/bin:$HOSTDIR/sbin:$PATH
 
-cd $HOME/src/
+cd $SRCDIR
 
 cd glibc-2.25/
 
@@ -14,4 +14,4 @@ cd build/
 
 make
 
-make install_root=$HOME/target/ install
+make install_root=$TARGETDIR install

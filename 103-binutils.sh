@@ -2,9 +2,9 @@
 
 set -e
 
-export PATH=$HOME/host/bin:$HOME/host/sbin:$PATH
+export PATH=$HOSTDIR/bin:$HOSTDIR/sbin:$PATH
 
-cd $HOME/src/
+cd $SRCDIR
 
 wget --no-clobber http://ftp.gnu.org/gnu/binutils/binutils-2.28.tar.bz2
 
@@ -20,8 +20,8 @@ cd build/
 
 ../configure --target=i686-cross-linux-gnu \
              --program-prefix=i686-cross-linux-gnu- \
-             --prefix=$HOME/host \
-             --with-sysroot=$HOME/target
+             --prefix=$HOSTDIR \
+             --with-sysroot=$TARGETDIR
 
 make
 

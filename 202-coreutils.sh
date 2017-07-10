@@ -2,9 +2,9 @@
 
 set -e
 
-export PATH=$HOME/host/bin:$HOME/host/sbin:$PATH
+export PATH=$HOSTDIR/bin:$HOSTDIR/sbin:$PATH
 
-cd $HOME/src/
+cd $SRCDIR
 
 wget --no-clobber http://ftp.gnu.org/gnu/coreutils/coreutils-8.27.tar.xz
 
@@ -19,7 +19,7 @@ mkdir build
 cd build/
 
 ../configure --host=i686-cross-linux-gnu \
-             --prefix=$HOME/target/usr \
+             --prefix=$TARGETDIR/usr \
              --enable-install-program=hostname
 
 cp ../man/dummy-man  ../man/help2man
@@ -29,4 +29,4 @@ make
 make install
 
 # Move programs used by rcS.d into /bin
-mv $HOME/target/usr/bin/{cat,chgrp,chmod,hostname,ln,mkdir,rm,sleep,[} $HOME/target/bin/
+mv $TARGETDIR/usr/bin/{cat,chgrp,chmod,hostname,ln,mkdir,rm,sleep,[} $TARGETDIR/bin/

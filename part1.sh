@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Let's make it is ready for boot.
+# Let's make it ready for boot.
 
 set -e
 
@@ -14,7 +14,7 @@ set -e
 ./108-gcc.sh
 ./109-linux.sh
 
-export PATH=$HOME/host/bin:$HOME/host/sbin:$PATH
+export PATH=$HOSTDIR/bin:$HOSTDIR/sbin:$PATH
 
 # Pseudo /sbin/init
-i686-cross-linux-gnu-gcc -o $HOME/target/sbin/init hello.c
+i686-cross-linux-gnu-gcc -o $TARGETDIR/sbin/init hello.c

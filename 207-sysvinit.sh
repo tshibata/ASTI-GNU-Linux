@@ -2,9 +2,9 @@
 
 set -e
 
-export PATH=$HOME/host/bin:$HOME/host/sbin:$PATH
+export PATH=$HOSTDIR/bin:$HOSTDIR/sbin:$PATH
 
-cd $HOME/src/
+cd $SRCDIR
 
 wget --no-clobber http://download.savannah.gnu.org/releases/sysvinit/sysvinit-2.88dsf.tar.bz2
 
@@ -16,5 +16,5 @@ cd sysvinit-2.88dsf/
 
 DISTRO=unknown \
 CC=i686-cross-linux-gnu-gcc \
-ROOT=$HOME/target \
+ROOT=$TARGETDIR \
 make all install

@@ -2,9 +2,9 @@
 
 set -e
 
-export PATH=$HOME/host/bin:$HOME/host/sbin:$PATH
+export PATH=$HOSTDIR/bin:$HOSTDIR/sbin:$PATH
 
-cd $HOME/src/
+cd $SRCDIR
 
 wget --no-clobber http://ftp.gnu.org/gnu/bash/bash-4.4.tar.gz
 rm -rf bash-4.4/
@@ -19,13 +19,13 @@ patch -p0 -i ../bash44-$I
 done
 
 ./configure --host=i686-cross-linux-gnu \
-            --prefix=$HOME/target/ \
-            --includedir=$HOME/target/usr/include/ \
-            --datarootdir=$HOME/target/usr/share/ \
+            --prefix=$TARGETDIR \
+            --includedir=$TARGETDIR/usr/include/ \
+            --datarootdir=$TARGETDIR/usr/share/ \
             --without-bash-malloc
 
 make
 
 make install
 
-ln -sv /bin/bash $HOME/target/bin/sh
+ln -sv /bin/bash $TARGETDIR/bin/sh
