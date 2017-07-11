@@ -43,6 +43,3 @@ wget --no-clobber https://curl.haxx.se/download/curl-7.54.1.tar.gz
 wget --no-clobber http://ftp.gnu.org/gnu/wget/wget-1.19.1.tar.xz
 wget --no-clobber https://nano-editor.org/dist/v2.8/nano-2.8.5.tar.xz
 popd
-
-# Prepare for SSL by the target.
-$TARGETDIR/etc/ssl/cacert.sh

@@ -18,7 +18,16 @@ mkdir $MNT/boot
 mount -v /dev/sdb1 $MNT/boot
 rm -rf $MNT/boot/*
 
+cp -r --preserve=mode,timestamps literal/* $MNT
+rm `find $MNT -name .gitkeep`
+
 cp -r --preserve=mode,timestamps $TARGETDIR/* $MNT
+
+echo "$(hostname)" > $MNT/etc/hostname
+echo "127.0.0.1 localhost $(hostname)" > $MNT/etc/hosts
+
+# Prepare for SSL by the target.
+$MNT/etc/ssl/cacert.sh
 
 # Make /root only for root
 chmod -v 700 $MNT/root

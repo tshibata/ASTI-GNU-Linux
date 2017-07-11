@@ -12,4 +12,3 @@ set -e
 ./206-sed.sh
 ./207-sysvinit.sh
 ./208-util-linux.sh
-./209-configuration.sh
