@@ -36,6 +36,10 @@ pushd $MNT/root
 tar xf $SRCDIR/ncurses-6.0.tar.gz
 tar xf $SRCDIR/readline-7.0.tar.gz
 tar xf $SRCDIR/bash-4.4.tar.gz
+for PATCH in bash44-{001..012}
+do
+  patch --directory=bash-4.4 -p0 -i $SRCDIR/$PATCH
+done
 
 tar xf $SRCDIR/binutils-2.28.tar.bz2
 tar xf $SRCDIR/mpc-1.0.3.tar.gz

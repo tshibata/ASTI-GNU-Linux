@@ -13,6 +13,10 @@ set -e
 ./307-tar.sh
 
 pushd $SRCDIR
+for PATCH in bash44-{001..012}
+do
+  wget --no-clobber http://ftp.gnu.org/gnu/bash/bash-4.4-patches/$PATCH
+done
 wget --no-clobber http://ftp.gnu.org/gnu//ncurses/ncurses-6.0.tar.gz
 wget --no-clobber http://ftp.gnu.org/gnu/readline/readline-7.0.tar.gz
 wget --no-clobber http://ftp.gnu.org/gnu/autoconf/autoconf-2.69.tar.xz
