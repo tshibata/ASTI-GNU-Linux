@@ -2,7 +2,7 @@
 
 set -e
 
-cp -r target/* $TARGETDIR
+cp -r literal/* $TARGETDIR
 rm `find $TARGETDIR -name .gitkeep`
 
 echo "$(hostname)" > $TARGETDIR/etc/hostname
