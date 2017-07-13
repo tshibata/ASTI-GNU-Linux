@@ -19,6 +19,7 @@ mkdir build
 cd build/
 
 # Install only fsck, kill, mount (including umount), mountpoint and sulogin.
+# It does not recognize '--enable-swapon'
 
 ../configure PKG_CONFIG='' \
              --host=i686-cross-linux-gnu \
