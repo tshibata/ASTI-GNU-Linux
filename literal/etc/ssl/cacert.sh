@@ -4,13 +4,15 @@ set -e
 
 SSLDIR=`dirname $0`
 
-test -e $SSLDIR/certs && mv --backup=numbered $SSLDIR/certs $SSLDIR/certs.old
+curl -o $SSLDIR/tmp https://curl.haxx.se/ca/cacert.pem
+
+test -e $SSLDIR/ca-bundle.crt && mv --no-target-directory --backup=numbered $SSLDIR/ca-bundle.crt $SSLDIR/ca-bundle.crt.old
+
+mv $SSLDIR/tmp $SSLDIR/ca-bundle.crt
+
+test -e $SSLDIR/certs && mv --no-target-directory --backup=numbered $SSLDIR/certs $SSLDIR/certs.old
 
 mkdir $SSLDIR/certs
-
-test -e $SSLDIR/ca-bundle.crt && mv --backup=numbered $SSLDIR/ca-bundle.crt $SSLDIR/ca-bundle.crt.old
-
-curl -o $SSLDIR/ca-bundle.crt https://curl.haxx.se/ca/cacert.pem
 
 cat $SSLDIR/ca-bundle.crt | grep -v "^$" | grep -v "^#" | while read LINE
 do
