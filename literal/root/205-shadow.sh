@@ -2,6 +2,8 @@
 
 cd shadow-4.5/
 
+rm -rf build/
+
 mkdir build
 
 cd build/

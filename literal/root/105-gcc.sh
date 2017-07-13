@@ -17,4 +17,4 @@ make
 
 make install
 
-ln -s gcc /usr/bin/cc
+ln -fns gcc /usr/bin/cc
