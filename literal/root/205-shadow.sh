@@ -14,3 +14,9 @@ cd build/
 make
 
 make install
+
+# Activate shadow password.
+pwconv
+
+# Suppress warning.
+useradd -D --gid 999
