@@ -1,3 +1,4 @@
+# group
 root:x:0:
 bin:x:1:daemon
 sys:x:2:

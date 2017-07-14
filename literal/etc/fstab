@@ -1,3 +1,4 @@
+# fstab
 
 # file system  mount-point  type     options             dump  fsck
 #                                                              order
