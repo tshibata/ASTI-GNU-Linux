@@ -19,6 +19,7 @@ do
 done
 wget --no-clobber http://ftp.gnu.org/gnu//ncurses/ncurses-6.0.tar.gz
 wget --no-clobber http://ftp.gnu.org/gnu/readline/readline-7.0.tar.gz
+wget --no-clobber http://downloads.sourceforge.net/project/e2fsprogs/e2fsprogs/v1.43.4/e2fsprogs-1.43.4.tar.gz
 wget --no-clobber http://ftp.gnu.org/gnu/autoconf/autoconf-2.69.tar.xz
 wget --no-clobber http://ftp.gnu.org/gnu/automake/automake-1.15.tar.xz
 wget --no-clobber http://dev.gentoo.org/~blueness/eudev/eudev-3.2.2.tar.gz

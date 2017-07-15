@@ -9,6 +9,7 @@ set -e
 ./105-gcc.sh
 ./106-util-linux.sh
 # TBD: Shall we re-compile everything?
+./107-e2fsprogs.sh
 
 ./201-eudev.sh
 ./202-sysklogd.sh
