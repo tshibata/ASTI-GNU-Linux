@@ -18,7 +18,7 @@ mkdir $MNT/boot
 mount -v /dev/sdb1 $MNT/boot
 rm -rf $MNT/boot/*
 
-cp -r --preserve=mode,timestamps literal/* $MNT
+cp -r --preserve=mode,timestamps literal/* mock/* $MNT
 rm `find $MNT -name .gitkeep`
 
 cp -r --preserve=mode,timestamps $TARGETDIR/* $MNT
