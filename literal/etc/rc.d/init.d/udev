@@ -2,11 +2,11 @@
 
 case "${1}" in
    start)
-      /usr/sbin/udevd --daemon
-      /usr/sbin/udevadm trigger --action=add --type=subsystems
-      /usr/sbin/udevadm trigger --action=add --type=devices
-      /usr/sbin/udevadm trigger --action=change --type=devices
-      /usr/sbin/udevadm settle
+      /sbin/udevd --daemon
+      /sbin/udevadm trigger --action=add --type=subsystems
+      /sbin/udevadm trigger --action=add --type=devices
+      /sbin/udevadm trigger --action=change --type=devices
+      /sbin/udevadm settle
       ;;
 
    *)

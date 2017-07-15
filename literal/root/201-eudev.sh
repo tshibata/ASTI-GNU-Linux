@@ -10,8 +10,9 @@ mkdir build
 
 cd build
 
-../configure --prefix=/usr \
-             --sysconfdir=/etc
+../configure --prefix= \
+             --includedir=/usr/include \
+             --datarootdir=/usr/share
 
 make
 
