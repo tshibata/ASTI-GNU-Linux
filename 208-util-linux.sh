@@ -18,7 +18,7 @@ mkdir build
 
 cd build/
 
-# Install only kill, mount (including umount), mountpoint and sulogin.
+# Install only hwclock, kill, mount (including umount), mountpoint and sulogin.
 # Omit fsck because it fails in execution unless e2fsprogs.
 # It does not recognize '--enable-swapon'.
 
@@ -32,6 +32,7 @@ cd build/
              --disable-shared \
              --disable-makeinstall-chown \
              --disable-all-programs \
+             --enable-hwclock \
              --enable-kill \
              --enable-libblkid \
              --enable-libmount \

@@ -1,19 +1,14 @@
-#!/bin/sh
-#!/bin/sh -x
+#!/bin/bash -x
 
-# currently not used
-exit 1
-
-# --utc
-# --localtime
+CONF=`sed -e 's/#.*//' /etc/hwclock.conf`
 
 case "${1}" in
    start)
-      /sbin/hwclock --hctosys
+      /sbin/hwclock --hctosys $CONF
       ;;
 
    stop)
-      /sbin/hwclock --systohc
+      /sbin/hwclock --systohc $CONF
       ;;
 
    *)
