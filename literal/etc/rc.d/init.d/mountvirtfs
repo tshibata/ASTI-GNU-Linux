@@ -10,6 +10,8 @@ case "${1}" in
       /bin/mkdir -p /run/lock /run/shm
       /bin/chmod 1777 /run/lock /run/shm
       /bin/ln -sfn /run/shm /dev/shm
+
+      echo /run/initlog > /run/initlogpath
       ;;
 
    *)
