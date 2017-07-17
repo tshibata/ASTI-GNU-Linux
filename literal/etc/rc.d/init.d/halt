@@ -1,13 +1,11 @@
-#!/bin/sh -x
+#!/bin/bash -x
 
 case "${1}" in
-#   stop)
    start)
       /sbin/halt -d -f -i -p
       ;;
 
    *)
-#      echo "Usage: ${0} {stop}"
       echo "Usage: ${0} {start}"
       exit 1
       ;;

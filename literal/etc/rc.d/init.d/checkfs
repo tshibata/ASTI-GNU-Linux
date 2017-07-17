@@ -1,10 +1,8 @@
-#!/bin/sh -x
-
-# So... fstab is not used?
+#!/bin/bash -x
 
 case "${1}" in
    start)
-      /bin/mount -n -o remount,ro / || /etc/rc.d/init.d/halt stop
+      /bin/mount -n -o remount,ro / || /etc/rc.d/init.d/halt start
       /sbin/fsck -a -A -C -T
       ERR=$?
       if [ $(($ERR & 32)) != 0 ]
