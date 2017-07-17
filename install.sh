@@ -36,8 +36,8 @@ chmod -v 700 $MNT/root
 chmod -v 1777 $MNT/tmp
 
 # Allow utmp(13 on the target) to leave records
-chgrp 13 $MNT/run/utmp $MNT/var/log/btmp $MNT/var/log/lastlog $MNT/var/log/wtmp
-chmod -v 664  $MNT/run/utmp $MNT/var/log/btmp $MNT/var/log/lastlog $MNT/var/log/wtmp
+chgrp 13 $MNT $MNT/var/log/lastlog
+chmod -v 664 $MNT/var/log/lastlog
 
 dumpkeys < /dev/tty1 > $MNT/etc/key.map
 
