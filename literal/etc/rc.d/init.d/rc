@@ -21,7 +21,7 @@ do
       *)
          if [ ! -f /etc/rc.d/rc${next}.d/[KS][0-9][0-9]${suffix} ]
          then
-            echo "### ${suffix} is left untracked ###" |& tee -a `/bin/cat /run/initlogpath`
+            echo "### ${suffix} is left untracked ###" |& /bin/tee -a `/bin/cat /run/initlogpath`
          fi
          ;;
    esac
@@ -40,9 +40,9 @@ do
    esac
    if [ -f ${started} ]
    then
-      echo |& tee -a `/bin/cat /run/initlogpath`
-      echo "### ${i} ###" |& tee -a `/bin/cat /run/initlogpath`
-      ${i} stop |& tee -a `/bin/cat /run/initlogpath`
+      echo |& /bin/tee -a `/bin/cat /run/initlogpath`
+      echo "### ${i} ###" |& /bin/tee -a `/bin/cat /run/initlogpath`
+      ${i} stop |& /bin/tee -a `/bin/cat /run/initlogpath`
    fi
 done
 
@@ -52,11 +52,11 @@ do
    started=/etc/rc.d/rc$prev.d/S[0-9][0-9]$suffix
    if [ -f ${started} ]
    then
-      echo "### ${suffix} is kept started ###" |& tee -a `/bin/cat /run/initlogpath`
+      echo "### ${suffix} is kept started ###" |& /bin/tee -a `/bin/cat /run/initlogpath`
    else
-      echo |& tee -a `/bin/cat /run/initlogpath`
-      echo "### ${i} ###" |& tee -a `/bin/cat /run/initlogpath`
-      ${i} start |& tee -a `/bin/cat /run/initlogpath`
+      echo |& /bin/tee -a `/bin/cat /run/initlogpath`
+      echo "### ${i} ###" |& /bin/tee -a `/bin/cat /run/initlogpath`
+      ${i} start |& /bin/tee -a `/bin/cat /run/initlogpath`
    fi
 done
 

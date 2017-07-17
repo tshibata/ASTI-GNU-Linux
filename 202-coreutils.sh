@@ -29,4 +29,4 @@ make
 make install
 
 # Move programs used by rcS.d into /bin
-mv $TARGETDIR/usr/bin/{cat,chgrp,chmod,hostname,ln,mkdir,rm,sleep,[} $TARGETDIR/bin/
+mv $TARGETDIR/usr/bin/{cat,chgrp,chmod,hostname,ln,mkdir,rm,sleep,tee,[} $TARGETDIR/bin/
