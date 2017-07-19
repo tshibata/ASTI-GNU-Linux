@@ -1,2 +1,3 @@
 # profile
 export LANG=C
+export PKG_CONFIG_PATH=/usr/lib/pkgconfig:/lib/pkgconfig
