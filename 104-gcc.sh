@@ -65,7 +65,7 @@ make install-gcc
 # Unless --disable-libatomic, --disable-libgomp and --disable-libvtv,
 # configure: error: C compiler cannot create executables
 
-# Unless --disable-libmpx or --with-headers
+# Unless --disable-libmpx and --with-headers
 # ../../../../libmpx/mpxrt/mpxrt-utils.c:69:23: error: 'PATH_MAX' undeclared here (not in a function)
 
 # Unless --disable-libquadmath, --disable-libstdcxx and --disable-libssp,
