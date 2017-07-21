@@ -4,13 +4,13 @@ set -e
 
 cd $SRCDIR
 
-wget --no-clobber https://www.kernel.org/pub/linux/kernel/v4.x/linux-4.9.9.tar.xz
+wget --no-clobber https://www.kernel.org/pub/linux/kernel/v4.x/linux-4.9.39.tar.xz
 
-rm -rf linux-4.9.9/
+rm -rf linux-4.9.39/
 
-tar xf linux-4.9.9.tar.xz
+tar xf linux-4.9.39.tar.xz
 
-cd linux-4.9.9/
+cd linux-4.9.39/
 
 make mrproper
 

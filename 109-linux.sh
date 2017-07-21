@@ -6,7 +6,7 @@ export PATH=$HOSTDIR/bin:$HOSTDIR/sbin:$PATH
 
 cd $SRCDIR
 
-cd linux-4.9.9/
+cd linux-4.9.39/
 
 make
 
