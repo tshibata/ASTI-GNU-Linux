@@ -6,13 +6,13 @@ export PATH=$HOSTDIR/bin:$HOSTDIR/sbin:$PATH
 
 cd $SRCDIR
 
-wget --no-clobber http://ftp.gnu.org/gnu/grep/grep-3.0.tar.xz
+wget --no-clobber http://ftp.gnu.org/gnu/grep/grep-3.1.tar.xz
 
-rm -rf grep-3.0/
+rm -rf grep-3.1/
 
-tar xf grep-3.0.tar.xz
+tar xf grep-3.1.tar.xz
 
-cd grep-3.0/
+cd grep-3.1/
 
 mkdir build
 
