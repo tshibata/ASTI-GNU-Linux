@@ -13,9 +13,9 @@ tar xf grub-2.02~beta3.tar.xz
 cd grub-2.02~beta3/
 
 ./configure --prefix=$HOSTDIR \
-            --target=i686-cross-linux-gnu \
-            --disable-efiemu \
             --disable-werror
+
+# Unless --disable-werror, it fails in self reproduction.
 
 make
 
