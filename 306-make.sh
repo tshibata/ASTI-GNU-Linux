@@ -6,13 +6,13 @@ export PATH=$HOSTDIR/bin:$HOSTDIR/sbin:$PATH
 
 cd $SRCDIR
 
-wget --no-clobber http://ftp.gnu.org/gnu/make/make-4.2.tar.bz2
+wget --no-clobber http://ftp.gnu.org/gnu/make/make-4.2.1.tar.gz
 
-rm -rf make-4.2/
+rm -rf make-4.2.1/
 
-tar xf make-4.2.tar.bz2
+tar xf make-4.2.1.tar.gz
 
-cd make-4.2/
+cd make-4.2.1/
 
 mkdir build
 
