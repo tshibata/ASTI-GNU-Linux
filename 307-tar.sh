@@ -18,6 +18,7 @@ mkdir build
 
 cd build
 
+FORCE_UNSAFE_CONFIGURE=1 \
 ../configure --host=i686-cross-linux-gnu \
              --prefix=$TARGETDIR/usr
 
