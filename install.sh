@@ -62,7 +62,7 @@ ln -s ../mpfr-3.1.5 gcc-6.3.0/mpfr
 tar xf $SRCDIR/perl-5.24.1.tar.gz
 tar xf $SRCDIR/autoconf-2.69.tar.xz
 tar xf $SRCDIR/automake-1.15.tar.xz
-tar xf $SRCDIR/util-linux-2.29.tar.xz
+tar xf $SRCDIR/util-linux-2.30.tar.xz
 tar xf $SRCDIR/e2fsprogs-1.43.4.tar.gz
 
 tar xf $SRCDIR/eudev-3.2.2.tar.gz

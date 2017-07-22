@@ -6,13 +6,13 @@ export PATH=$HOSTDIR/bin:$HOSTDIR/sbin:$PATH
 
 cd $SRCDIR
 
-wget --no-clobber https://www.kernel.org/pub/linux/utils/util-linux/v2.29/util-linux-2.29.tar.xz
+wget --no-clobber https://www.kernel.org/pub/linux/utils/util-linux/v2.30/util-linux-2.30.tar.xz
 
-rm -rf util-linux-2.29/
+rm -rf util-linux-2.30/
 
-tar xf util-linux-2.29.tar.xz
+tar xf util-linux-2.30.tar.xz
 
-cd util-linux-2.29/
+cd util-linux-2.30/
 
 mkdir build
 

@@ -2,7 +2,7 @@
 
 set -e
 
-cd util-linux-2.29
+cd util-linux-2.30
 
 rm -rf build/
 
