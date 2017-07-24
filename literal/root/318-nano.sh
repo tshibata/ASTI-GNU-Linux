@@ -4,7 +4,8 @@ set -e
 
 cd nano-2.8.5/
 
-./configure --prefix=/usr
+./configure --prefix=/usr \
+            --sysconfdir=/etc
 
 make
 
