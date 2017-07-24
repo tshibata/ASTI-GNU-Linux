@@ -4,13 +4,13 @@ set -e
 
 cd $SRCDIR
 
-wget --no-clobber http://alpha.gnu.org/gnu/grub/grub-2.02~beta3.tar.xz
+wget --no-clobber http://ftp.gnu.org/gnu/grub/grub-2.02.tar.xz
 
-rm -rf grub-2.02~beta3/
+rm -rf grub-2.02/
 
-tar xf grub-2.02~beta3.tar.xz
+tar xf grub-2.02.tar.xz
 
-cd grub-2.02~beta3/
+cd grub-2.02/
 
 ./configure --prefix=$HOSTDIR \
             --disable-werror
