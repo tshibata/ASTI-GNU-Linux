@@ -2,6 +2,7 @@
 
 set -e
 
+# Get ready for self compile
 ./101-ncurses.sh
 ./102-readline.sh
 ./103-bash.sh
@@ -11,6 +12,7 @@ set -e
 # TBD: Shall we re-compile everything?
 ./107-e2fsprogs.sh
 
+# Go beyond single user mode
 ./201-eudev.sh
 ./202-sysklogd.sh
 ./203-inetutil.sh
@@ -18,6 +20,7 @@ set -e
 ./205-shadow.sh
 ./206-runlevel.sh
 
+# Get ready for self reproduction
 ./301-pkg-config.sh
 ./302-perl.sh
 ./303-m4.sh
@@ -36,4 +39,8 @@ set -e
 ./316-curl.sh
 ./317-wget.sh
 # TBD: Do I really need both of curl and wget?
-./318-nano.sh
+
+# Get ready for self development
+./401-gettext.sh
+./402-git.sh
+./403-nano.sh

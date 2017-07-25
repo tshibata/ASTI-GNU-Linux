@@ -86,6 +86,8 @@ tar xf $SRCDIR/xz-5.2.3.tar.xz
 tar xf $SRCDIR/openssl-1.0.2l.tar.gz
 tar xf $SRCDIR/wget-1.19.1.tar.xz
 tar xf $SRCDIR/curl-7.54.1.tar.gz
+tar xf $SRCDIR/gettext-0.19.8.1.tar.xz
+tar xf $SRCDIR/git-2.13.3.tar.xz
 tar xf $SRCDIR/nano-2.8.5.tar.xz
 popd
 

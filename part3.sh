@@ -42,5 +42,7 @@ wget --no-clobber http://www.cpan.org/src/5.0/perl-5.24.1.tar.gz
 wget --no-clobber https://www.openssl.org/source/openssl-1.0.2l.tar.gz
 wget --no-clobber https://curl.haxx.se/download/curl-7.54.1.tar.gz
 wget --no-clobber http://ftp.gnu.org/gnu/wget/wget-1.19.1.tar.xz
+wget --no-clobber http://ftp.gnu.org/gnu/gettext/gettext-0.19.8.1.tar.xz
+wget --no-clobber https://www.kernel.org/pub/software/scm/git/git-2.13.3.tar.xz
 wget --no-clobber https://nano-editor.org/dist/v2.8/nano-2.8.5.tar.xz
 popd
