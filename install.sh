@@ -89,6 +89,7 @@ tar xf $SRCDIR/curl-7.54.1.tar.gz
 tar xf $SRCDIR/gettext-0.19.8.1.tar.xz
 tar xf $SRCDIR/git-2.13.3.tar.xz
 tar xf $SRCDIR/nano-2.8.5.tar.xz
+tar xf $SRCDIR/parted-3.1.tar.xz
 popd
 
 grub-install --target=i386-pc --boot-directory=$MNT/boot /dev/sdb

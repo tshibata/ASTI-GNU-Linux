@@ -44,3 +44,4 @@ set -e
 ./401-gettext.sh
 ./402-git.sh
 ./403-nano.sh
+./404-parted.sh
