@@ -8,18 +8,20 @@ set -e
 ./103-bash.sh
 ./104-binutils.sh
 ./105-gcc.sh
-./106-util-linux.sh
+
+# Replace mock
+./106-util-linux.sh # for fsck, swapon and swapoff.
 # TBD: Shall we re-compile everything?
-./107-e2fsprogs.sh
+./107-e2fsprogs.sh # for eudev
+./108-gperf.sh # for eudev
+./109-eudev.sh # for udevadm and udevd
 
 # Go beyond single user mode
-./201-gperf.sh
-./202-eudev.sh
-./203-sysklogd.sh
-./204-inetutil.sh
-./205-dhcpcd.sh
-./206-shadow.sh
-./207-runlevel.sh
+./201-sysklogd.sh
+./202-inetutil.sh
+./203-dhcpcd.sh
+./204-shadow.sh
+./205-runlevel.sh
 
 # Get ready for self reproduction
 ./301-pkg-config.sh
