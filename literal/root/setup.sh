@@ -13,12 +13,13 @@ set -e
 ./107-e2fsprogs.sh
 
 # Go beyond single user mode
-./201-eudev.sh
-./202-sysklogd.sh
-./203-inetutil.sh
-./204-dhcpcd.sh
-./205-shadow.sh
-./206-runlevel.sh
+./201-gperf.sh
+./202-eudev.sh
+./203-sysklogd.sh
+./204-inetutil.sh
+./205-dhcpcd.sh
+./206-shadow.sh
+./207-runlevel.sh
 
 # Get ready for self reproduction
 ./301-pkg-config.sh

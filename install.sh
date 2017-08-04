@@ -65,6 +65,7 @@ tar xf $SRCDIR/automake-1.15.tar.xz
 tar xf $SRCDIR/util-linux-2.30.tar.xz
 tar xf $SRCDIR/e2fsprogs-1.43.4.tar.gz
 
+tar xf $SRCDIR/gperf-3.1.tar.gz
 tar xf $SRCDIR/eudev-3.2.2.tar.gz
 tar xf $SRCDIR/inetutils-1.9.4.tar.xz
 tar xf $SRCDIR/dhcpcd-6.11.5.tar.xz
